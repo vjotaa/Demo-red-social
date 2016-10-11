@@ -1,0 +1,23 @@
+$colors : (
+	violet: #BF0042,
+	blue: #00a2bf,
+	green: #42bf00,
+	grey: #AEAEAE,
+	dark-grey: #545454,
+	diferent-green: #078C60,
+	pink: #F00D68,
+	black: #000,
+	white: #FFF,
+	dark-opacity-grey: rgba(0, 0, 0, 0.5),
+	white-opacity: rgba(255, 255, 255, 1)
+	);
+
+@each $color_name, $color in $colors{
+	.#{$color-name}{
+		background-color: $color;
+	}
+
+	.#{$color-name}-text{
+		color: $color;
+	}
+}

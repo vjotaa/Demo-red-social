@@ -1,0 +1,20 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
+  =devise_error_messages!
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+    = f.email_field :email, autofucus: true, class: 'mdl-textfield__input dark-grey-text'
+    = f.label :email, class: "mdl-textfield__label dark-grey-text"
+
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+    = f.password_field :password, autofucus: true, class: 'mdl-textfield__input dark-grey-text'
+    = f.label :password, class: "mdl-textfield__label dark-grey-text"
+
+  .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+    = f.check_box :remember_me, class: 'checkbox-2.mdl-checkbox__input'
+    = f.label :remember_me, class: "mdl-checkbox.mdl-js-checkbox.mdl-js-ripple-effect dark-grey-text"
+
+  .margin-top
+    .row.middle-xs
+      .col-xs-12
+        .box.text-right.margin-right
+          =f.submit "Iniciar sesion", class:"mdl-button mdl-js-button mdl-button--raised mdl-button--colored margin-bottom"
+   

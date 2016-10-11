@@ -1,0 +1,16 @@
+// Place all the styles related to the Main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.main-background{
+	background-image: url(#{asset_path('people.jpg')});
+	background-repeat: no-repeat;
+	display: table;
+	width: 100%;
+	text-align: center;
+	color: white;
+	background-color: black;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+}

@@ -1,0 +1,17 @@
+%div.main-background.intro
+	.intro-body
+		.container-fluid
+			.row.middle-xs.white-text.center-xs
+				.hidde-xs.col.sm-12.col-md-7.col-lg-7
+					.box
+						%h1.big-text.grey-text Welcome to the official website of Growsoft community, you can sing up and check out the new content.
+
+				.col-xs-12.col-sm-12.col-md-5.col-lg-5
+					.box
+						.big-padding.white-opacity.white-text.border.sombra
+							%h2.bold.dark-grey-text Growsoft Community
+							%p.dark-grey-text See other members of this great community, share and show your talent.
+							.top-space
+								=render "devise/registrations/new"
+
+
