@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
 
-  validates :username, presence: true, uniqueness: true, lenght: {in: 3..12}
-
+  validates :username, presence: true, uniqueness: true, length: { in: 6..12 }
+  validate :validate_username_regex
   def self.from_omniauth(auth)
     where(provider: auth["provider"], uid:auth["uid"]).first_or_create do |user|
       if auth[:info]
@@ -16,4 +16,12 @@ class User < ApplicationRecord
   	end
 
   end  
+
+  private
+    def validate_username_regex
+      unless username =~ /\A[a-zA-Z]*[a-zA-Z][a-zA-Z0-9_]*\z/        
+        errors.add(:username,'the username should initialize with a letter and contain only numbers and underscore')
+        errors.add(:username,'the username may contain letters, underscores and numbers')
+    end
+  end
 end

@@ -33,7 +33,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :development, :test do
 	gem 'sqlite3'
 	gem 'shoulda-matchers'
-	gem 'rspec-rails'
+	gem 'rspec-rails', '~> 3.5'
 	gem 'factory_girl_rails'
 end
 
