@@ -15,7 +15,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'devise'
 gem 'omniauth-facebook'
-gem 'bootstrap-sass'
 
 
 group :development, :test do
@@ -33,9 +32,16 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
 	gem 'sqlite3'
+	gem 'shoulda-matchers'
+	gem 'rspec-rails'
+	gem 'factory_girl_rails'
 end
 
 group :production do
      gem 'pg'
      gem 'rails_12factor'
+end
+
+group :test do
+	
 end

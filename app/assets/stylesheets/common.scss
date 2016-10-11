@@ -1,9 +1,6 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 html {
     color: #222;
     font-size: 1em;
@@ -114,7 +111,6 @@ textarea {
   height: auto;
   padding: 100px 0;
   text-align: center;
-  color: white;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
