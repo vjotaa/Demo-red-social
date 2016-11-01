@@ -8,14 +8,17 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 
 gem 'jquery-rails'
-gem 'turbolinks', '~> 5'
+gem 'jquery-turbolinks' #gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 #Mygems
 gem 'haml-rails'
 gem 'devise'
 gem 'omniauth-facebook'
-
+gem 'annotate'
+gem 'best_in_place', '~> 3.0.1'
+gem 'paperclip'
+gem 'remotipart', '~> 1.2'
 
 group :development, :test do
   gem 'byebug', platform: :mri
@@ -31,7 +34,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
-	gem 'sqlite3'
+	gem 'mysql2'
 	gem 'shoulda-matchers'
 	gem 'rspec-rails', '~> 3.5'
 	gem 'factory_girl_rails'

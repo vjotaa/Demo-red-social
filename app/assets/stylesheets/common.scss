@@ -105,6 +105,10 @@ textarea {
 		height: 100%;
 	}
 
+  .full-width{
+    width: 100% !important;
+  }
+
 .intro {
   display: table;
   width: 100%;
@@ -153,6 +157,9 @@ textarea {
     margin-top: 50px;
 
     }
+    .top-space{
+      margin-top: 20px; 
+    }
 
     .no-margin{
         margin: 0;
@@ -162,8 +169,15 @@ textarea {
         padding: 0;
     }
 
+    .big-padding{
+      padding: 2em 1.5em;
+    }
+
     .padding-top{
         padding-top: 20px;
+    }
+    .large-padding{
+      padding: 10px 15px;
     }
 
     .padding-left{
@@ -202,6 +216,10 @@ textarea {
         margin-left: 20px;
     }
 
+    .medium{
+      font-size: 1.2em;
+    }
+
     /* Border */
 
     .border{
@@ -213,7 +231,22 @@ textarea {
     .text-right{
         text-align: right;
     }
+    
+    .remove-bullet-points{
+      list-style-type: none;
+      margin: 0;
+    }
+    .text-left{
+      text-align: left;
+    }
 
+    .text-right{
+      text-align: right;
+    }
+
+    .circle{
+      border-radius:  15%;
+    }
     /* Material desing changes*/
 
     .mdl-textfield--floating-label.is-focused .mdl-textfield__label,
@@ -223,6 +256,14 @@ textarea {
         font-size: 15px;
         top: 4px;
         visibility: visible; }
+    
+    .absolute{
+      position: absolute;
+    }
+    
+    .relative{
+      position: relative;
+    }
 
 /* ==========================================================================
    Helper classes

@@ -1,0 +1,33 @@
+.margin-xy
+	.row.center-xs
+		.col-xs-8.col-md-10
+			.white.mdl-shadow--2dp.top-space.relative
+				.big-padding.white-text.text-left.cover.relative#user-cover{style:"background-image:url(#{@user.cover.url("medium") })"}
+					=render "accounts/menu_avatar"
+					.top-space#user-avatar
+						=circle_img @user.avatar.url(:medium),100
+				%section.border-bottom.top-space
+					.row.middle-xs
+						.col-xs
+							%h1.no-margin.medium.center-xs
+								%span= best_in_place_if current_user == @user, @user, :name
+								%span= best_in_place_if current_user == @user, @user, :last_name
+						.col-xs-4.col-sm-2
+				.large-padding
+					.row
+						.col-xs
+							%h3 Seguidores
+						.col-xs
+							=@user.posts.count
+							%h3 Posts
+					.row.center-xs
+						.col-xs-8.col-md-10
+							%span= best_in_place_if current_user == @user, @user, :bio
+			.top-space
+				=form_for @user, remote: true do |f|
+					%div{style:"display:none"}
+						=f.file_field :avatar,class:"remotipart"
+				=form_for @user, remote: true do |f|
+					%div{style:"display:none"}
+						=f.file_field :cover,class:"remotipart"					
+

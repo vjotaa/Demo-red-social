@@ -1,6 +1,8 @@
 class MainController < ApplicationController
 
   def home
+  	@post = Post.new
+    @posts = Post.order("updated_at DESC")
   end
 
   def unregistered

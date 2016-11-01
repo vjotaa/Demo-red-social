@@ -1,15 +1,45 @@
 // Place all the styles related to the Main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.main-background{
-	background-image: url(#{asset_path('people.jpg')});
-	background-repeat: no-repeat;
-	display: table;
-	width: 100%;
-	text-align: center;
-	background-color: black;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
-	-o-background-size: cover;
+body{
+    background-color: #EEE;
+}
+
+.parallax { 
+    /* The image used */
+    background-image: url(#{asset_path('people.jpg')});
+
+    /* Set a specific height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.parallax2 { 
+    /* The image used */
+    background-image: url(#{asset_path('people2.jpg')});
+
+    /* Set a specific height */
+    height: 100%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.cover{
+    background-size:cover;
+    background-position: center;
+
+
+}
+
+.remotipart{
+    display: none;
 }
