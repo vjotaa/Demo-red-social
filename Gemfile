@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'sqlite3'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
@@ -11,20 +11,25 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks' #gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
-#Mygems
+#Gems that i need.
 gem 'haml-rails'
-gem 'devise'
+gem 'devise', github: "plataformatec/devise"
 gem 'omniauth-facebook'
 gem 'annotate'
-gem 'best_in_place', '~> 3.0.1'
-gem 'paperclip'
-gem 'remotipart', '~> 1.2'
+gem "best_in_place", "~> 3.0.1"
+gem "paperclip"
+gem "remotipart"
+gem "aasm"
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem "draper",github:"audionerd/draper",branch:"rails5"
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
 end
 
 group :development do
+
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
@@ -34,17 +39,12 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :development, :test do
-	gem 'mysql2'
 	gem 'shoulda-matchers'
 	gem 'rspec-rails', '~> 3.5'
 	gem 'factory_girl_rails'
 end
 
 group :production do
-     gem 'pg'
-     gem 'rails_12factor'
-end
-
-group :test do
-	
+  gem 'pg'
+  gem 'rails_12factor'
 end

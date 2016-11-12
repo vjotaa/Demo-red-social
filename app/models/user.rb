@@ -36,22 +36,30 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
-  validates :username, presence: true, uniqueness: true, length: { in: 5..12 }
+  validates :username, presence: true,uniqueness: true,length: {in: 3..12}
   validate :validate_username_regex
 
   has_many :posts 
+  has_many :friendship
+  has_many :followers,class_name: "Friendship",foreign_key: "friend_id"
+
+  has_many :friends_added, through: :friendships, source: :friend
+  has_many :friends_who_added,through: :friendships, source: :user
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.jpeg"
   has_attached_file :cover, styles: { medium: "900x600>", thumb: "400x300>" }, default_url: "/images/:style/missing_cover.jpg"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
   validates_attachment_content_type :cover, content_type: /\Aimage\/.*\z/
 
-
+  def my_friend?(friend)
+    Friendship.friends?(self,friend)
+  end
 
   private
     def validate_username_regex
       unless username =~ /\A[a-zA-Z]*[a-zA-Z][a-zA-Z0-9_]*\z/
         errors.add(:username,'the username may contain letters, underscores and numbers')
+        errors.add(:username, 'The username must be star with a letter.s')
       end
     end
 end

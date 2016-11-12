@@ -3,37 +3,38 @@
 # Table name: users
 #
 #  id                     :integer          not null, primary key
-#  email                  :string(255)      default(""), not null
-#  encrypted_password     :string(255)      default(""), not null
-#  reset_password_token   :string(255)
+#  email                  :string           default(""), not null
+#  encrypted_password     :string           default(""), not null
+#  reset_password_token   :string
 #  reset_password_sent_at :datetime
 #  remember_created_at    :datetime
 #  sign_in_count          :integer          default(0), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
-#  current_sign_in_ip     :string(255)
-#  last_sign_in_ip        :string(255)
-#  username               :string(255)      default(""), not null
-#  name                   :string(255)
-#  last_name              :string(255)
-#  bio                    :text(65535)
-#  uid                    :string(255)
-#  provider               :string(255)
+#  current_sign_in_ip     :string
+#  last_sign_in_ip        :string
+#  username               :string           default(""), not null
+#  name                   :string
+#  last_name              :string
+#  bio                    :text
+#  uid                    :string
+#  provider               :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
-#  cover_file_name        :string(255)
-#  cover_content_type     :string(255)
-#  cover_file_size        :integer
-#  cover_updated_at       :datetime
-#  avatar_file_name       :string(255)
-#  avatar_content_type    :string(255)
+#  avatar_file_name       :string
+#  avatar_content_type    :string
 #  avatar_file_size       :integer
 #  avatar_updated_at      :datetime
+#  cover_file_name        :string
+#  cover_content_type     :string
+#  cover_file_size        :integer
+#  cover_updated_at       :datetime
 #
 
 FactoryGirl.define do
   factory :user do
-  	password "12345678"
-  	sequence(:email){|n| "robot_#{n}@factory.com"}
+    password "12345678"
+    sequence(:email){|n| "dummy_#{n}@factory.com" }
+    sequence(:username){|n| "username#{n+1}" }
   end
 end

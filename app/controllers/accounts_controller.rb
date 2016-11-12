@@ -4,7 +4,7 @@ class AccountsController < ApplicationController
 	before_action :authenticate_owner!, only: [:update]
 	
 	def show
-		
+		@are_friends = current_user.my_friend?(@user)
 	end
 
 	def update
