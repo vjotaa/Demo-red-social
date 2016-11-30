@@ -39,7 +39,7 @@ class User < ApplicationRecord
   validates :username, presence: true,uniqueness: true,length: {in: 3..12}
   validate :validate_username_regex
 
-  has_many :posts 
+  has_many :posts
   has_many :friendship
   has_many :followers,class_name: "Friendship",foreign_key: "friend_id"
 
@@ -53,6 +53,17 @@ class User < ApplicationRecord
 
   def my_friend?(friend)
     Friendship.friends?(self,friend)
+  end
+
+  def friend_ids
+    # [12,123,12,3123] => friend_id
+    #Yo soy el user => friend_id
+    Friendship.active.where(user:self).pluck(:friend_id)
+  end
+
+  def user_ids
+    #Yo soy el friend => user_id
+    Friendship.active.where(friend:self).pluck(:user_id)
   end
 
   private

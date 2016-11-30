@@ -10,6 +10,11 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    respond_to do |format|
+      format.js{}
+      format.html{}
+    end
+
   end
 
   # GET /posts/new

@@ -22,7 +22,7 @@ gem "remotipart"
 gem "aasm"
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem "draper",github:"audionerd/draper",branch:"rails5"
-
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug', platform: :mri

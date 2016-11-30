@@ -19,6 +19,10 @@ body{
     background-size: cover;
 }
 
+.second-image{
+    background-image: url(#{asset_path('people3.png')})
+}
+
 .parallax2 { 
     /* The image used */
     background-image: url(#{asset_path('people2.jpg')});

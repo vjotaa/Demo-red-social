@@ -3,9 +3,9 @@ class FriendshipsController < ApplicationController
 	before_action :find_friendship, only: [:update]
 
 	def index
-		@pending_friendships = current_user.followers.pending
-		@accepted_friendships = current_user.followers.active
-		@pending_requests = current_user.friendship.pending
+		@pending_friendships = current_user.followers.pending.decorate
+		@accepted_friendships = current_user.followers.active.decorate
+		@pending_requests = current_user.friendship.decorate
 	end
 
 	def create
@@ -19,7 +19,7 @@ class FriendshipsController < ApplicationController
 				format.js
 			end
 		end
-	end	
+	end
 
 	def update
 		if params[:status] == "1"
@@ -33,7 +33,7 @@ class FriendshipsController < ApplicationController
 	end
 
 	private
-		
+
 		def find_friend
 			@friend = User.find(params[:friend_id])
 		end

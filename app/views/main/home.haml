@@ -10,4 +10,8 @@
 					.white.large-padding
 						=render "posts/form"
 					#posts
-						=render @posts
+						.data
+							=render @posts
+						#pagination
+							=will_paginate @posts
+

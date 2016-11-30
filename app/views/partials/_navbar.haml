@@ -1,10 +1,11 @@
 %header.mdl-layout__header.mdl-layout__header--scroll
 	.mdl-layout__header-row
-		%span.mdl-layout-title Growsoft community
+		%span.mdl-layout-title=link_to "Growsoft community", root_path,class:'white-text', style:'text-decoration: none;' 
 		.mdl-layout-spacer
 		%nav.mdl-navigation.mdl-layout--large-screen-only
 			-if user_signed_in?
 				=link_to "My friends", friendships_path,class: 'padding-right'
+				=link_to current_user.username, current_user,class: 'padding-right'
 				=link_to "Sign out", destroy_user_session_path, method: :delete
     		
 
