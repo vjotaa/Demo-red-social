@@ -8,6 +8,3 @@ App.post = App.cable.subscriptions.create "PostChannel",
   received: (data) ->
     if data.action == "new_post"
       $("#posts .data").prepend(data.message)
-
-  echo: ()->
-    @perform "echo", {hola: "mundo"}

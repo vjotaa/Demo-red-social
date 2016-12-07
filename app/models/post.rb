@@ -41,10 +41,11 @@ private
     data = {message: to_html,action: "new_post"}
 
     self.user.friend_ids.each do |friend_id|
-      ActionCable.server.broadcast "demo", data
+      ActionCable.server.broadcast "posts_#{friend_id}", data
     end
 
     self.user.user_ids.each do |friend_id|
+      ActionCable.server.broadcast "posts_#{friend_id}", data
     end
   end
 
