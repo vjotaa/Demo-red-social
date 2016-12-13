@@ -1,4 +1,8 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+
+  resources :notifications, only: [:index,:update]
   resources :posts
   resources :accounts, as: :users, only: [:show, :update]
   resources :friendships, only: [:create,:update,:index]
@@ -16,4 +20,5 @@ Rails.application.routes.draw do
 
   post "/custom_sign_up", to: "users/omniauth_callbacks#custom_sign_up"
   mount ActionCable.server => '/cable'
+  mount Sidekiq::Web => '/sidekiq'
 end

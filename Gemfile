@@ -23,6 +23,8 @@ gem "aasm"
 gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 gem "draper",github:"audionerd/draper",branch:"rails5"
 gem 'will_paginate'
+gem 'sidekiq'
+gem 'sinatra', require: nil
 
 group :development, :test do
   gem 'byebug', platform: :mri

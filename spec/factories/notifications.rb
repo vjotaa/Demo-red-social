@@ -1,17 +1,20 @@
 # == Schema Information
 #
-# Table name: posts
+# Table name: notifications
 #
 #  id         :integer          not null, primary key
-#  body       :text
 #  user_id    :integer
+#  item_type  :string
+#  item_id    :integer
+#  viewed     :boolean          default(FALSE)
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 FactoryGirl.define do
-  factory :post do
-    body "MyText"
+  factory :notification do
     user nil
+    item "MyString"
+    viewed false
   end
 end

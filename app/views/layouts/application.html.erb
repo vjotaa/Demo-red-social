@@ -14,8 +14,12 @@
       <div class="mdl-snackbar__text"></div>
       <button class="mdl-snackbar__action" type="button"></button>
     </div>
-  <p style="<%= 'display:none;' if notice.nil? && alert.nil? %>"><%= notice %> <%= alert %></p>
-  
+  <p class="large-padding black white-text center-xs no-margin" style="<%= 'display:none;' if notice.nil? && alert.nil? %>">
+
+  <%= notice %> <%= alert %>
+  <span Style="float:right;" class="close-parent">X</span>
+  </p>
+
   <!-- Always shows a header, even in smaller screens. -->
 <div class="mdl-layout mdl-js-layout">
 <%= render 'partials/navbar' %>
@@ -25,10 +29,10 @@
 </div>
 
 
-    
 
-    
- 
-   
+
+
+
+
   </body>
 </html>

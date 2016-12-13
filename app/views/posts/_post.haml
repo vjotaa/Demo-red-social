@@ -1,3 +1,8 @@
 %article.large-padding.white.top-space.mdl-shadow--2dp
-	.top-space.text-left
-		=post.body
+  .comment.mdl-color-text--grey-700.text-left
+    .comment__header
+      =circle_img post.user.avatar.url(:medium),50
+      %strong.comment__author
+        =post.user.username
+      .comment__text.padding-top
+        =post.body

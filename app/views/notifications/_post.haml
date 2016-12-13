@@ -1,0 +1,6 @@
+%p
+  Your friend
+  =notification.item.user.email
+  create a notification
+  =link_to notification_path(id:notification.id,notification:{viewed: true}), method: :put do
+    <i class="material-icons">done</i>

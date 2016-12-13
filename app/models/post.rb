@@ -3,7 +3,7 @@
 # Table name: posts
 #
 #  id         :integer          not null, primary key
-#  body       :text(65535)
+#  body       :text
 #  user_id    :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -11,9 +11,8 @@
 
 class Post < ApplicationRecord
   belongs_to :user
-
+  include Notificable
   scope :news, ->{order("created_at desc")}
-
   after_create :send_to_action_cable
 
 
@@ -29,6 +28,10 @@ class Post < ApplicationRecord
 
 end
 =end
+
+  def user_ids
+    self.user.friend_ids + self.user.user_ids
+  end
 
   def self.all_for_user(user)
       Post.where(user_id: user.id)
