@@ -13,7 +13,7 @@ body{
 
 .parallax {
     /* The image used */
-    background-image: url(#{asset_path('people.jpg')});
+    background-image: url(#{asset_path('slide3.jpg')});
 
     /* Set a specific height */
     height: 100%;
@@ -65,17 +65,20 @@ body{
 #notifications{
     position: absolute;
     background:white;
-    top: 65px;
-    left: 0px;
-    width: 160px;
+    top: 62px;
+    left: -50px;
+    width: 190px;
     color: black;
     max-height: 0px;
     overflow: hidden;
     transition: all 0.4s;
     &.active{
         max-height: 300px;
-        padding:10px 15px;
+        padding:30px 55px;
         overflow-y: scroll;
+        border: solid 1px;
+        border-color:black;
+
 
     }
 }

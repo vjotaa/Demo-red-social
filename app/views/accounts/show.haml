@@ -8,13 +8,13 @@
 						=circle_img @user.avatar.url(:medium),100
 				%section.border-bottom.top-space
 					.row.middle-xs
-						.col-xs
+						.col-xs-12
 							%h1.no-margin.medium.center-xs
-								%span= best_in_place_if current_user == @user, @user, :name
-								%span= best_in_place_if current_user == @user, @user, :last_name
+								%span.medium= best_in_place_if current_user == @user, @user, :name,:place_holder => "Click me to add a name"
+								%span.medium= best_in_place_if current_user == @user, @user, :last_name,:place_holder => "Click me to add a last name"
 
-								%p 
-									%span= best_in_place_if current_user == @user, @user, :username
+								%p.medium
+									%span= best_in_place_if current_user == @user, @user, :username,:place_holder => "Click me to add a username"
 						.col-xs-4.col-sm-2
 							-unless @are_friends
 								=button_to friendships_path(friend_id:@user.id), method: :post, remote: true, :"data-type" => "script", class:"mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" do
@@ -23,18 +23,22 @@
 				.large-padding
 					.row
 						.col-xs
-							%h3 Seguidores
+							%h4 Seguidores
+							%h5
+								=@user.followers.count
 						.col-xs
-							=@user.posts.count
-							%h3 Posts
+							%h4 Posts
+							%h5
+								=@user.posts.count
 					.row.center-xs
 						.col-xs-8.col-md-10
-							%span= best_in_place_if current_user == @user, @user, :bio
+							%h4 Biography
+							%span.medium= best_in_place_if current_user == @user, @user, :bio,:place_holder => "Click me to add a biography",class:'black-text'
 			.top-space
 				=form_for @user, remote: true do |f|
 					%div{style:"display:none"}
 						=f.file_field :avatar,class:"remotipart"
 				=form_for @user, remote: true do |f|
 					%div{style:"display:none"}
-						=f.file_field :cover,class:"remotipart"					
+						=f.file_field :cover,class:"remotipart"
 

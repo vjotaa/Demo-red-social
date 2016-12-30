@@ -1,12 +1,12 @@
 .row.center-xs.padding-top
 	.col-xs-10.col-md-8
 		.white.large-padding
-			.border-bottom.padding-bottom
-				%p.text-left Amistades pendientes
+			.border-bottom.padding-bottom.no-padding
+				%h5.center-text Pending friends
 				=render @pending_friendships
 			.top-space.padding-top
-				%p.text-left Amistades aceptadas
+				%h5.center-text Friendships accepted
 				=render @accepted_friendships
 			.top-space
-				%p.text-left Mis solicitudes pendientes
+				%h5.center-text Awaiting requests
 				=render @pending_requests

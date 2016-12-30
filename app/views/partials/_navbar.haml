@@ -14,7 +14,7 @@
 
 
 .mdl-layout__drawer
-	%span.mdl-layout-title.center-xs Growsoft Community
+	%span.mdl-layout-title.center-xs=link_to "Growsoft community", root_path,class:'dark-gray-text', style:'text-decoration: none;'
 	-if user_signed_in?
 		#notifications
 		.center-xs.padding-top
