@@ -2,6 +2,7 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
 
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :notifications, only: [:index,:update]
   resources :posts
   resources :accounts, as: :users, only: [:show, :update]

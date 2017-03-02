@@ -25,6 +25,7 @@ gem "draper",github:"audionerd/draper",branch:"rails5"
 gem 'will_paginate'
 gem 'sidekiq'
 gem 'sinatra', require: nil
+gem 'rails_admin', '~> 1.0'
 
 group :development, :test do
   gem 'byebug', platform: :mri

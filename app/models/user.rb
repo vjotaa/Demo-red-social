@@ -40,7 +40,7 @@ class User < ApplicationRecord
   validate :validate_username_regex
 
   has_many :posts
-  has_many :friendship
+  has_many :friendships
   has_many :followers,class_name: "Friendship",foreign_key: "friend_id"
 
   has_many :friends_added, through: :friendships, source: :friend
